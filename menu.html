@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Coffee</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Extra Menu Styles -->
+    <style>
+        .menu-section {
+            min-height: 100vh;
+            background: var(--primary-color);
+            padding-top: 120px;
+            color: var(--white);
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: var(--font-size--xxl);
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .menu-subtitle {
+            text-align: center;
+            font-size: var(--font-size--l);
+            margin-bottom: 50px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: var(--border-radius--large);
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .menu-emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .menu-name {
+            font-size: var(--font-size--l);
+            font-weight: var(--font-weight--semi-bold);
+            margin-bottom: 8px;
+        }
+
+        .menu-desc {
+            font-size: var(--font-size--m);
+            opacity: 0.85;
+            margin-bottom: 12px;
+        }
+
+        .menu-price {
+            font-size: var(--font-size--m);
+            color: var(--secondary-color);
+            font-weight: var(--font-weight--bold);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar section-content">
+        <a href="index.html" class="nav-logo">
+            <h2 class="logo-text">☕ Coffee</h2>
+        </a>
+
+        <button id="menu-open-button" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
+            <button id="menu-close-button" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link active" href="menu.html">Menu</a></li>
+            <li><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="menu-section">
+        <div class="section-content">
+
+            <h2 class="menu-title">Our Menu</h2>
+            <p class="menu-subtitle">Fresh brews & baked happiness ☕</p>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <div class="menu-emoji">☕</div>
+                    <h3 class="menu-name">Espresso</h3>
+                    <p class="menu-desc">Strong, bold & energizing</p>
+                    <p class="menu-price">₹120</p>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-emoji">🥛</div>
+                    <h3 class="menu-name">Cappuccino</h3>
+                    <p class="menu-desc">Perfect balance of milk & coffee</p>
+                    <p class="menu-price">₹150</p>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-emoji">🍫</div>
+                    <h3 class="menu-name">Mocha</h3>
+                    <p class="menu-desc">Coffee meets chocolate</p>
+                    <p class="menu-price">₹170</p>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-emoji">🧊</div>
+                    <h3 class="menu-name">Iced Coffee</h3>
+                    <p class="menu-desc">Chilled & refreshing</p>
+                    <p class="menu-price">₹160</p>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-emoji">🥐</div>
+                    <h3 class="menu-name">Croissant</h3>
+                    <p class="menu-desc">Flaky & buttery delight</p>
+                    <p class="menu-price">₹90</p>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-emoji">🍩</div>
+                    <h3 class="menu-name">Donut</h3>
+                    <p class="menu-desc">Soft, sweet & happy</p>
+                    <p class="menu-price">₹80</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

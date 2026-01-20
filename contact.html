@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Coffee</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Extra Contact Styles -->
+    <style>
+        .contact-section {
+            min-height: 100vh;
+            background: var(--primary-color);
+            padding-top: 120px;
+            color: var(--white);
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: var(--font-size--xxl);
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            font-size: var(--font-size--l);
+            margin-bottom: 50px;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: var(--border-radius--large);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: var(--font-size--m);
+        }
+
+        .info-item span {
+            font-size: 1.8rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: var(--border-radius--large);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 15px;
+            border-radius: var(--border-radius--medium);
+            border: none;
+            outline: none;
+            font-size: var(--font-size--m);
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .contact-form button {
+            margin-top: 10px;
+            padding: 12px;
+            font-size: var(--font-size--m);
+            font-weight: var(--font-weight--semi-bold);
+            border-radius: var(--border-radius--medium);
+            border: 2px solid var(--secondary-color);
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar section-content">
+            <a href="index.html" class="nav-logo">
+                <h2 class="logo-text">☕ Coffee</h2>
+            </a>
+
+            <button id="menu-open-button" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <button id="menu-close-button" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="menu.html">Menu</a></li>
+                <li><a class="nav-link active" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="section-content">
+
+                <h2 class="contact-title">Contact Us</h2>
+                <p class="contact-subtitle">We’d love to hear from you ☕💬</p>
+
+                <div class="contact-wrapper">
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span>📍</span>
+                            <p>123 Coffee Street, Brew City</p>
+                        </div>
+                        <div class="info-item">
+                            <span>📞</span>
+                            <p>+91 98765 43210</p>
+                        </div>
+                        <div class="info-item">
+                            <span>✉️</span>
+                            <p>hello@coffee.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span>⏰</span>
+                            <p>Mon – Sun : 9 AM – 10 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <form id="contact-form" id="contact-form">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message ☕</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("g23roTZXAasw5PQ59"); // EmailJS → Account → Public Key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_d0a7zej",   // Email Services
+      "template_we32w69",  // Email Templates
+      this
+    ).then(function() {
+      alert("Message sent successfully ☕");
+    }, function(error) {
+      alert("Failed to send message ❌");
+      console.log(error);
+    });
+  });
+</script>
+</body>
+
+</html>
