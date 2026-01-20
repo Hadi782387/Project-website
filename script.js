@@ -1,6 +1,6 @@
-const menuOpenBtn = document.querySelector(".menu-open-button");
-const menuCloseBtn = document.querySelector(".menu-close-button");
-const navMenu = document.querySelector(".nav-menu");
+const menuOpenBtn = document.querySelector("#menu-open-button");
+const menuCloseBtn = document.querySelector("#menu-close-button");
+const navMenu = document.querySelector(".nav-menu"); // yeh line missing thi
 
 menuOpenBtn.addEventListener("click", () => {
     navMenu.classList.add("active");
