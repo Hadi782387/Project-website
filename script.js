@@ -1,9 +1,11 @@
-const menuOpenBtn = document.querySelector('.menu-open-btn');
-const menuCloseBtn = document.querySelector('.menu-close-btn');
+const menuOpenBtn = document.querySelector(".menu-open-button");
+const menuCloseBtn = document.querySelector(".menu-close-button");
+const navMenu = document.querySelector(".nav-menu");
 
-menuOpenBtn.addEventListener('click', () => {
-    document.body.classList.add('menu-open');
+menuOpenBtn.addEventListener("click", () => {
+    navMenu.classList.add("active");
 });
-menuCloseBtn.addEventListener('click', () => {
-    document.body.classList.remove('menu-open');
+
+menuCloseBtn.addEventListener("click", () => {
+    navMenu.classList.remove("active");
 });
